@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Picapoint - CPM-kalkulator</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <style type="text/css">
+      body {
+        margin: 10px;
+        white-space: nowrap;
+        background: #F00000;
+        color: #FFFFFF;
+        font-family: 'Raleway', sans-serif;
+        font-size: 14px;
+        background-image: url('picapoint_hvit_230.png');
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 117px 28px;
+      }
+    
+      #container {
+        max-width: 275px;
+        margin: 0 auto;
+      }
+      .navigation {
+        padding: 0;
+        margin: 20px 0;
+        display: block;
+        width: 100%;
+        height: 20px; 
+      }
+      .navigation li {
+        display: inline-block;
+        float: left;
+      }
+      .navigation li a {
+        padding-right: 10px;
+        color: #FFF;
+        text-decoration: none;
+      }
+      .navigation li a.active {
+        font-weight: bold;
+      }
+      span {
+        display: inline-block;
+        width: 67px;
+      }
+      .calc_container {
+        width: 275px;
+        height: 120px;
+        overflow: hidden;
+        position: relative;
+      }
+      .calc_container div {
+        width: 275px;
+        height: 120px;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    </style>
+
+    <script src="popup.js"></script>
+  </head>
+
+  <body>
+    <div id="container">
+      <h1>CPM-kalkulator</h1>
+      <ul class="navigation">
+        <li><a href="#cpm_container" id="nav_to_cpm" class="active">Finn CPM</a></li>
+        <li><a href="#cost_container" id="nav_to_cost" class="">Finn pris</a></li>
+        <li><a href="#views_container" id="nav_to_views" class="">Finn visninger</a></li>
+      </ul>
+      <div class="calc_container">
+        <div id="cpm_container" style="left:0;">
+          <p><span>Pris:</span> <input type="text" data-what="cpm" name="cost" id="cpm_field_cost" tabindex="1"></p> 
+          <p><span>Visninger:</span> <input type="text" data-what="cpm" name="views" id="cpm_field_views" tabindex="2"></p>
+          <p class="output" id="cpm_output"><span>CPM:</span>kr 0.00</p>
+        </div>
+        <div id="cost_container" style="left:275px;">
+          <p><span>CPM:</span> <input type="text" data-what="cost" name="cost" id="cost_field_cpm" tabindex="3"></p> 
+          <p><span>Visninger:</span> <input type="text" data-what="cost" name="views" id="cost_field_views" tabindex="4"></p>
+          <p class="output" id="cost_output"><span>Pris:</span>kr 0,-</p>
+        </div>
+        <div id="views_container" style="left: 550px;">
+          <p><span>Pris:</span> <input type="text" data-what="views" name="cost" id="views_field_cost" tabindex="5"></p> 
+          <p><span>CPM:</span> <input type="text" data-what="views" name="views" id="views_field_cpm" tabindex="6"></p>
+          <p class="output" id="views_output"><span>Visninger:</span>0</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
